@@ -10,9 +10,13 @@ public class MyWebConfig implements WebMvcConfigurer {
 	
 	// <resources mapping="/upload/**"  location="file:///c:/upload/" />
 	
+	// for linux
+	static final public String savePath = "/usr/upload/";
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/upload/**").addResourceLocations("file:///c:/upload/");
+		//registry.addResourceHandler("/upload/**").addResourceLocations("file:///c:/upload/");
+		registry.addResourceHandler("/upload/**").addResourceLocations("file:/usr/upload/");
 			
 	}
 }
