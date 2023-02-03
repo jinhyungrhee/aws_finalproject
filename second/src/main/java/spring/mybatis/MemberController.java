@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.MyWebConfig;
+
 import jakarta.servlet.http.HttpSession; // boot 3점대부터는 jakarta.servlet 사용
 
 @Controller
@@ -78,7 +80,7 @@ public class MemberController {
 		// dto.setxxxx(xxx파라미터 자동 저장 - name속성명과 dto 필드명이 같은 경우)
 		// 파일업로드 c:/upload 저장처리
 		// dto image 변수에 c:/upload 저장파일명 세팅
-		String savePath = "c:/upload/";
+		String savePath = MyWebConfig.savePath;
 		MultipartFile imagefile = dto.getImagefile();
 		// 파일명 추출
 		String filename1 = imagefile.getOriginalFilename();
